@@ -39,7 +39,7 @@ update to all listeners.
 
 Example initializer:
 
-    # This ensures that in development mode, Hub won't get reloaded and lose it's
+    # This ensures that in development mode, Hub won't get reloaded and lose its
     # listeners
     require 'realtime/hub'
 
