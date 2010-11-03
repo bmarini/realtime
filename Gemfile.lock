@@ -1,0 +1,19 @@
+PATH
+  remote: .
+  specs:
+    realtime (0.0.1)
+      koala (~> 0.9)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    json (1.4.6)
+    koala (0.9.1)
+      json
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  koala (~> 0.9)
+  realtime!
