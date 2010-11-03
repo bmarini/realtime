@@ -1,4 +1,5 @@
 require 'logger'
+require 'koala'
 
 module Realtime
   autoload :App,        "realtime/app"
