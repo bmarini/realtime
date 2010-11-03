@@ -1,6 +1,6 @@
-## About the Realtime module
+## About the Realtime gem
 
-All the code in the Realtime module is for interacting with Facebook's Realtime
+All the code in the Realtime gem is for interacting with Facebook's Real-time
 Update API: http://developers.facebook.com/docs/api/realtime
 
 ## Overview
