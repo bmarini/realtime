@@ -3,6 +3,27 @@
 All the code in the Realtime gem is for interacting with [Facebook's Real-time
 Update API](http://developers.facebook.com/docs/api/realtime)
 
+## Why
+
+When you subscribe to the Facebook Real-time Update API, you are subscribing
+to be notified if fields have changed for users's of your app. Facebook doesn't
+post the actual updates themselves. This means you have to query the graph API
+for the actual update, and keep track of the last time you checked so you don't
+reprocess the same updates.
+
+This library will do those additional steps, so your custom code can just
+respond to the actual updates themselves.
+
+## 30,000 ft
+
+You initiate a subscription to facebook realtime updates for your app, once.
+Facebook pings your realtime endpoint to tell you there are updates. This
+endpoint should be handled by the `RealTime::App` rack app. This rack app
+queries the graph api to pull new updates since the last time it checked.
+These updates are passed into an in-process hub, that fans out each update to
+all subscribers. A subscriber to this hub will receive a facebook user id and
+hash of data (the update).
+
 ## Overview
 
 Here is an overview of the classes, described in order of how they are called.
@@ -25,8 +46,9 @@ class.
     Realtime::Lookup.perform(entry)
 
 Lookup takes the `uid`, `field`, and `time` from the entry hash, looks up the
-User to get an access token, and queries the facebook graph API to get any
-updates of type `field` since `time`.
+User to get an access token (you must provide the code to do this), and
+queries the facebook graph API to get any updates of type `field` since
+`time`.
 
 `Realtime::Lookup` then publishes these updates with `Realtime::Hub`
 
