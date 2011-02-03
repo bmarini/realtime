@@ -14,20 +14,19 @@ Responsible for making the initial subscription for updates to facebook.
 ### Realtime::App
 
 This is the endpoint, and handles subscription verification and receiving
-updates from facebook. This could be rewritten as a rack app if we ever want
-to port this code. It receives an array facebook `entry` and passes them off
-individually to `Realtime::Lookup`.
+updates from facebook. It receives an array facebook `entry` and passes them
+off individually to `Realtime::Lookup`.
 
 ### Realtime::Lookup
 
-RealtimeController hands off notifications of changes from facebook to this
+Realtime::App hands off notifications of changes from facebook to this
 class.
 
     Realtime::Lookup.perform(entry)
 
-Lookup takes the `uid`, `field`, and `time` from the entry, looks up the User
-to get an access token, and queries the facebook graph API to get any updates
-of type `field` since `time`.
+Lookup takes the `uid`, `field`, and `time` from the entry hash, looks up the
+User to get an access token, and queries the facebook graph API to get any
+updates of type `field` since `time`.
 
 `Realtime::Lookup` then publishes these updates with `Realtime::Hub`
 
