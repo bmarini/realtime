@@ -26,6 +26,7 @@ module Realtime
 
     protected
 
+    # Time must be a unix timestamp
     def self.unless_already_checked(user, field, time)
       return [] if last_checked(user, field) >= time
       update_last_checked(user, field, time)

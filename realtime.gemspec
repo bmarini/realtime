@@ -14,7 +14,9 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rack"
   s.add_dependency "koala", "~> 0.9"
+  s.add_dependency "json"
   s.add_development_dependency "minitest", "~> 2.0.2"
+  s.add_development_dependency "mocha"
 
   s.rubyforge_project = "realtime"
 

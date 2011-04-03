@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     realtime (0.0.1)
+      json
       koala (~> 0.9)
       rack
 
@@ -12,6 +13,7 @@ GEM
     koala (0.9.1)
       json
     minitest (2.0.2)
+    mocha (0.9.12)
     rack (1.2.2)
 
 PLATFORMS
@@ -19,4 +21,5 @@ PLATFORMS
 
 DEPENDENCIES
   minitest (~> 2.0.2)
+  mocha
   realtime!

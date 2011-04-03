@@ -1,4 +1,5 @@
 require 'rack'
+require 'json'
 
 # You'll want to map this rack app to the callback url configured in
 # Realtime::Config.callback_url
@@ -31,10 +32,14 @@ module Realtime
 
       Realtime.logger.info "New update from facebook:"
       Realtime.logger.info "X-Hub-Signature: %s" % @request.env['HTTP_X_HUB_SIGNATURE']
-      Realtime.logger.info @request.params.inspect
+      Realtime.logger.info @request.body.read
+      @request.body.rewind
+
+      params = JSON.parse(@request.body.read)
+      @request.body.rewind
 
       # Lookup the data given the uid, time, and what changed
-      params[:entry].each do |entry|
+      params['entry'].each do |entry|
         Realtime::Lookup.perform(entry)
       end
     end

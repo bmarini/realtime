@@ -2,6 +2,12 @@ require 'spec_helper'
 
 class ConfigSpec < MiniTest::Spec
   describe "Config" do
+    before do
+      # Temporary fix until Config becomes an instance
+      Realtime::Config.middleman = nil
+      Realtime::Config.logger    = nil
+    end
+
     it "must have accessors" do
       [:callback_url, :app_id, :secret, :verify_token, :logger, :middleman].each do |m|
         Realtime::Config.must_respond_to m
