@@ -17,7 +17,7 @@ class SimpleMiddleman
   end
 
   def last_checked(user, field)
-    @last_checked[user][field]
+    @last_checked[user][field] || 0
   end
 
   def update_last_checked(user, field, time)
