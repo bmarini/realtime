@@ -12,7 +12,9 @@ Gem::Specification.new do |s|
   s.summary     = %q{Gem for interacting with the Facebook Real-time Update API}
   s.description = %q{Gem for interacting with the Facebook Real-time Update API}
 
+  s.add_dependency "rack"
   s.add_dependency "koala", "~> 0.9"
+  s.add_development_dependency "minitest", "~> 2.0.2"
 
   s.rubyforge_project = "realtime"
 

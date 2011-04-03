@@ -40,6 +40,9 @@ module Realtime
     end
 
     def meet_challenge
+      Realtime.logger.info "Received challenge from facebook:"
+      Realtime.logger.info @request.params.inspect
+
       Koala::Facebook::RealtimeUpdates.meet_challenge(
         @request.params, Config.verify_token
       )

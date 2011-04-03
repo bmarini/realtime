@@ -3,17 +3,20 @@ PATH
   specs:
     realtime (0.0.1)
       koala (~> 0.9)
+      rack
 
 GEM
   remote: http://rubygems.org/
   specs:
-    json (1.4.6)
+    json (1.5.1)
     koala (0.9.1)
       json
+    minitest (2.0.2)
+    rack (1.2.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  koala (~> 0.9)
+  minitest (~> 2.0.2)
   realtime!

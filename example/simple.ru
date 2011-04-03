@@ -46,7 +46,7 @@ Realtime::Hub.subscribe lambda { |user, update|
   logger.info "Recieved facebook real-time update for user #{user}: #{update.inspect}"
 }
 
-use Rack::Lint
-use Rack::URLMap '/realtime/endpoint' => Realtime::App
-
-run lambda { |env| [200, {'Content-Type' => 'text/plain'}, "Hello, World!"] }
+map '/realtime/endpoint' do
+  use Rack::Lint
+  run Realtime::App.new
+end
