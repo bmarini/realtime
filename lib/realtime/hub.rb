@@ -16,6 +16,10 @@ module Realtime
       def subscribers
         @subscribers ||= []
       end
+
+      def clear!
+        @subscribers = []
+      end
     end
   end
 end

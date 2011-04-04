@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 class ConfigSpec < MiniTest::Spec
-  describe "Config" do
+  describe "Realtime::Config" do
     before do
       # Temporary fix until Config becomes an instance
       Realtime::Config.middleman = nil

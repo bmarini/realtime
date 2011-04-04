@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 class MiddlemanSpec < MiniTest::Spec
-  describe "Middleman" do
+  describe "Realtime::Middleman" do
     it "must raise exceptions for unimplemented interface" do
       assert_raises NotImplementedError do
         Realtime::Middleman.access_token(nil)
