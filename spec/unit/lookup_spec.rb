@@ -2,6 +2,12 @@ require 'spec_helper'
 
 class LookupSpec < MiniTest::Spec
   describe "Realtime::Lookup" do
+    before do
+      Realtime.configure do |c|
+        c.middleman    = Realtime::SimpleMiddleman.new
+      end
+    end
+
     it "collects updates based on an entry" do
       entry = {
         "uid"            => 1335845740,
