@@ -20,6 +20,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  json
+  koala (~> 0.9)
   minitest (~> 2.0.2)
   mocha
+  rack
   realtime!

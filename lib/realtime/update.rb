@@ -1,5 +1,5 @@
 module Realtime
-  module Update
+  class Update
     attr_reader :field, :data
 
     def initialize(field, data)
