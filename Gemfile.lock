@@ -15,14 +15,13 @@ GEM
     minitest (2.0.2)
     mocha (0.9.12)
     rack (1.2.2)
+    rcov (0.9.9)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  json
-  koala (~> 0.9)
   minitest (~> 2.0.2)
   mocha
-  rack
+  rcov
   realtime!

@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency "json"
   s.add_development_dependency "minitest", "~> 2.0.2"
   s.add_development_dependency "mocha"
+  s.add_development_dependency "rcov"
 
   s.rubyforge_project = "realtime"
 
